@@ -1,8 +1,8 @@
-# NOTES ON REACT
-**Source**: 
-*Full Modern React Tutorial*
-https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d
-, by **The Net Ninja**
+# NOTES ON REACT<br/>
+**Source**: <br/>
+*Full Modern React Tutorial*<br/>
+https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d<br/>
+by **The Net Ninja**<br/>
 
 React is a JavaScript library, used for implementing user interfaces (UI). It was launched by Facebook in 2013.
 
@@ -10,7 +10,7 @@ How is JavaScript and HTML linked? With a syntax, called **JSX**. This returns H
 
 React uses a **Virtual DOM**, that is, an in-memory representation of the DOM.
 
-**STATUS:** each component has its own state. They communicate through a **global status**.
+**STATE:** each component has its own state. They communicate through a **global state**.
 
 ### **COMPONENTS**
 
@@ -103,4 +103,89 @@ We generally import a css file into the app file. But, we can also do some in-li
  
     export default Navbar;
  
- MORE
+### **CLICK EVENTS**
+
+When you have a web, there many events happening: hover events, click events, keyboard events etc. This is the way you add a click event when user clicks a button:
+const Home = () => {
+
+    const handleClick = () => {
+        console.log('Hello World!');
+    }
+
+    return ( 
+        <div className="home">
+            <h2>Homepage</h2>
+            <button onClick={handleClick}>Click me</button>
+        </div>
+     );
+    }
+
+    export default Home;
+    
+We do not use (), beacuse this would fire the event, event without clickiing the button. But what would happen if we'd like to pass a function with a parameter? We have to wrap it in an anonimous function. This is the way we'd do it:
+
+    const Home = () => {
+
+      const handleClick = (e) => {
+        console.log('hello ninjas', e);
+      }
+
+      const handleClickAgain = (name, e) => {
+        console.log('hello ' + name, e.target);
+      }
+
+      return (
+        <div className="home">
+          <h2>Homepage</h2>
+          <button onClick={handleClick}>Click me</button>
+          <button onClick={(e) => handleClickAgain('mario', e)}>Click me again</button>
+        </div>
+      );
+    }
+
+    export default Home;
+
+e => is the event object, that we access when the event occurs. In this case, on clicking the button handleClickAgain we print by console the target of the event object.
+
+### **STATE or data motch**
+
+When we talk about **state** we talk about data being used by that component at point in time. That data could be an array of values, booleans, strings, objects, any kind our component uses.
+
+If a variable changes its value, and it is not reactive, we won't see the changes in our browser. To see the new values, we have to use a **hook**, and that hook is called **useState** in this case. To use this hook, we have to import it at the beginning of the file, from the react library.
+
+This is an example:
+
+    import { useState } from "react";
+
+    const Home = () => {
+      // let name = 'mario';
+      const [name, setName] = useState('mario');
+      const [age, setAge] = useState(25);
+
+      const handleClick = () => {
+        // name = 'luigi';
+        setName('luigi');
+        setAge(30);
+      }
+
+      return (
+        <div className="home">
+          <h2>Homepage</h2>
+          <p>{ name } is { age } years old</p>
+          <button onClick={handleClick}>Click me</button>
+        </div>
+      );
+    }
+
+    export default Home;
+
+The useState hook is a function that help us create a reactive value, and provides us with the way to change that value whenever we want.  
+
+We store the state in some kind of value. We use an array that grabs two values: first, the initial value, the second one is a function that we can ust to change the value, and most of the times starts with "set...":
+    
+    const [name, setName] = useState('mario');
+    
+
+
+
+
