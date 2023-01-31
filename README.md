@@ -1,4 +1,4 @@
-# IT ACADEMY - Itinerari React Online - Sprints 6 a 9
+# IT ACADEMY - Itinerari React Online - Notes on Sprints 6 a 9
 
 MENTOR: Pablo Monteserín.
 
