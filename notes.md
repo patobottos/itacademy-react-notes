@@ -1,18 +1,22 @@
 # NOTES ON REACT
+**Source**: 
+*Full Modern React Tutorial*
+https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d
+, by **The Net Ninja**
 
-React és una llibreria de JavaScript, per dur a terme interfícies d'usuari (UI). Va ser llançada per FAcebook l'any 2013.
+React is a JavaScript library, used for implementing user interfaces (UI). It was launched by Facebook in 2013.
 
-Els **components** poden **reutilitzar-se** i **combinar-se**. Els components són objectes de JavaScript.
+How is JavaScript and HTML linked? With a syntax, called **JSX**. This returns HTML content, through a function written in JavaScript.
 
-Com es vincula JavaScript i HTML? Amb una sintaxi, anomenada **JSX**. Aquesta torna contingut HTML, a través d'una funció escrita en JavaScript.
+React uses a **Virtual DOM**, that is, an in-memory representation of the DOM.
 
-React fa servir un **Virtual DOM**, és a dir, una representació del DOM en memòria.
-
-**ESTADO:** cada componente tiene su propio estado. Se comunican a través de un **estado global**.
+**STATUS:** each component has its own state. They communicate through a **global status**.
 
 ### **COMPONENTS**
 
-They are the building blocks of any react application. A typical web in React might be made with several components, where components are self contained sections of contents. For example, a nav-bar, an article, a side-bar, in a website might be a component. Our mission i sto build these components and rendered them into the webpage, by React. 
+**Components** are JavaScript objects, and one of the most important elements of React. **components** can be **reused** and **combined**.
+
+They are the building blocks of any React application. A typical web in React might be made with several components, where components are self contained sections of contents. For example, a nav-bar, an article, a side-bar, in a website might be a component. Our mission i sto build these components and rendered them into the webpage, by React. 
 
 Components contain: 
 1) template 
@@ -51,4 +55,32 @@ A component is, basically, a function. At the end of the file, we export it. For
 
 We can output strings and numbers (which are converted to strings), calling the variables with curly braces {}, but we can't pass booleans nor objects.
 
-In web applications, components are structure in a way they make a components tree. The **root component** is the first component rendered to the DOM, and sits at the very top of this tree. Next, if we are to make new components we nest them in the root one.  
+In web applications, components are structure in a way they make a **components tree**. The **root component** is the first component rendered to the DOM, and sits at the very top of this tree. Next, if we are to make new components we nest them in the root one.
+
+![ROOT COMPONENT CHART](https://user-images.githubusercontent.com/92860255/215748109-9ef43e75-e8ac-4f9d-a6d1-d47b252a3469.png)
+
+And the code in the root component would look like this:
+
+    import './App.css';
+    import Navbar from './Navbar';
+    
+    function App() {
+    
+    const title = "Welcome to the new blog";
+    return (
+    <div className="App">
+      <Navbar />
+      <div className="content">
+        <h1>{ title }</h1>
+      </div>
+    </div>
+    );
+    }
+    
+    export default App;
+ 
+ We can add as many components as we like, and nest one component into another. 
+ 
+ ### **ADDING STYLES**
+ 
+ fwfd
