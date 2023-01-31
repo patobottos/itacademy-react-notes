@@ -11,4 +11,10 @@ React fa servir un **Virtual DOM**, és a dir, una representació del DOM en mem
 **ESTADO:** cada componente tiene su propio estado. Se comunican a través de un **estado global**.
 
 ### **COMPONENTS**
-They are the building blocks of any react application. A typical web in React might be made with several components, where components are self contained sections of contents.
+They are the building blocks of any react application. A typical web in React might be made with several components, where components are self contained sections of contents. For example, a nav-bar, an article, a side-bar, in a website might be a component. Our mission i sto build these components and rendered them into the webpage, by React. 
+
+Components contain: 
+1) template 
+2) logic
+
+
