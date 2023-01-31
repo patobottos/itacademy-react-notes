@@ -27,9 +27,21 @@ A component is, basically, a function. At the end of the file, we export it. For
     
     function App() {
       return (
+      
+      const title = "App components";
+      const likes = 50;
+      const link = "http://google.com";
+      
         <div className="App">
           <div className="content">
-           <h1>App Components</h1>
+           <h1>{ title }</h1>
+           <p>Liked { likes } times</p>
+           
+           <p>{ 10 }</p>
+           <p>{ 'Hello everyone' }</p>
+           <p>{ [1,2,3,4,5] }</p>
+           <a href={link}>Google</a>
+                 
           </div>
         </div>
       );
@@ -37,4 +49,6 @@ A component is, basically, a function. At the end of the file, we export it. For
     
     export default App;"
 
-Go on.
+We can output strings and numbers (which are converted to strings), calling the variables with curly braces {}, but we can't pass booleans nor objects.
+
+In web applications, components are structure in a way they make a components tree. The **root component** is the first component rendered to the DOM, and sits at the very top of this tree. Next, if we are to make new components we nest them in the root one.  
