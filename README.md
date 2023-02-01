@@ -2,6 +2,6 @@
 
 MENTOR: Pablo Monteserín.
 
-ALUMNE: Patricio Bottos. 
+STUDENT: Patricio Bottos. 
 
-LLOC I DATA: Barcelona, febrer-maig de 2023.
+Barcelona, febrer-maig de 2023.
