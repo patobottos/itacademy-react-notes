@@ -103,7 +103,7 @@ We generally import a css file into the app file. But, we can also do some in-li
  
     export default Navbar;
  
-### **CLICK EVENTS**
+### **CLICK EVENTS**
 
 When you have a web, there many events happening: hover events, click events, keyboard events etc. This is the way you add a click event when user clicks a button:
 const Home = () => {
@@ -149,11 +149,13 @@ e => is the event object, that we access when the event occurs. In this case, on
 
 ### **STATE or data motch**
 
-When we talk about **state** we talk about data being used by that component at point in time. That data could be an array of values, booleans, strings, objects, any kind our component uses.
+When we talk about **state** we talk about data being used by that component at a point in time. That data could be an array of values, booleans, strings, objects, any kind our component uses.
 
-If a variable changes its value, and it is not reactive, we won't see the changes in our browser. To see the new values, we have to use a **hook**, and that hook is called **useState** in this case. To use this hook, we have to import it at the beginning of the file, from the react library.
+If a variable changes its value, and it is not reactive, we won't see the changes in our browser. To see the new values, we have to use a **hook**. You can identify a hook by its name because they usually start by the word _use_... 
 
-This is an example:
+In this case, we'll focus on a hook called **useState**. The useState hook is a function that help us create a reactive value, and provides us with the way to change that value whenever we want. 
+
+To use this hook, we have to import it at the beginning of the file, from the react library. This is an example:
 
     import { useState } from "react";
 
@@ -179,13 +181,18 @@ This is an example:
 
     export default Home;
 
-The useState hook is a function that help us create a reactive value, and provides us with the way to change that value whenever we want.  
-
-We store the state in some kind of value. We use an array that grabs two values: first, the initial value, the second one is a function that we can ust to change the value, and most of the times starts with "set...":
+We store the state in some kind of value. We use an array that grabs two values: first, the initial value, the second one is a function that we can use to change that initial value, and most of the times starts with "set...", and then whatever we called that initial value. For example:
     
     const [name, setName] = useState('mario');
-    
 
+Then, when I use that value later, in the template, is going to get whatever the state of that value is:
 
+    <p>{ name } is { age } years old</p>
+
+So, when this value changes, is going to change in the template as well. 
+
+    setName('luigi');
+   
+**setName** here is triggering React, and it re-renders the component, and when it re-renders, we have the new value of _name_ in the component. So we will use the **useState** hook when we need to use a value that changes.
 
 
