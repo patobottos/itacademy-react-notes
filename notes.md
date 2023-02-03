@@ -56,7 +56,7 @@ __JSX syntax__ allows us to easily create the HTML style-like templates in compo
 
 One main difference: in JSX we use the keyword **"className"**, camel case, and when it converts into HTML it turns into **"class"**.
 
-A component is, basically, a function. We declare it with a capital letter. At the end of the file, we export it. For example:
+A component is, basically, a function. We declare it with a capital letter (PascalCase). At the end of the file, we export it. For example:
 
     import './App.css';
     
