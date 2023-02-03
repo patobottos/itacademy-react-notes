@@ -11,6 +11,7 @@ How is JavaScript and HTML linked? With a syntax, called **JSX**. This returns H
 In nested JSX, **one parent element** must wrap all the other elements. Otherwise, elements with no parent will not transpile. In order to use JSX we need to import React at the beginning of the file:
 
     import React from "react"
+    import ReactDOM from "react-dom"
 
 ### **VIRTUAL DOM**
 React uses a **Virtual DOM**, that is, an in-memory representation of the DOM. So, we can render JSX directly to the HTML DOM using React Rendering API known as ReactDOM. It offers a simple method to render React elements to the DOM which look like this:
@@ -25,7 +26,27 @@ The _targetNode_ is the DOM node that you want to render the component to.
 
 **Components** are JavaScript objects, and one of the most important elements of React. **components** can be **reused** and **combined**.
 
-They are the building blocks of any React application. A typical web in React might be made with several components, where components are self contained sections of contents. For example, a nav-bar, an article, a side-bar, in a website might be a component. Our mission is to build these components and render them into the webpage, by React. 
+They are the building blocks of any React application. A typical web in React might be made with several components, where components are self contained sections of contents. For example, a nav-bar, an article, a side-bar, in a website might be a component. Our mission is to build these components and render them into the webpage, by React. Here's an example of a custom component named _<Page />_:
+
+    import React from 'react'
+    import ReactDom from 'react-dom'
+
+    function Page() {
+        return (
+            <div>
+                <h1>Reasons why I'm learning React</h1>
+                <ol>
+                    <li>It's cool</li>
+                    <li>It will help my find a better job</li>
+                </ol>
+            </div>
+        )
+    }
+
+    const myPage = document.getElementById("root"); // This is the place in my DOM where it will print my <Page /> component.
+
+    ReactDom.render(<Page />, myPage);
+
 
 Components contain: 
 1) template 
@@ -35,7 +56,7 @@ __JSX syntax__ allows us to easily create the HTML style-like templates in compo
 
 One main difference: in JSX we use the keyword **"className"**, camel case, and when it converts into HTML it turns into **"class"**.
 
-A component is, basically, a function. At the end of the file, we export it. For example:
+A component is, basically, a function. We declare it with a capital letter. At the end of the file, we export it. For example:
 
     import './App.css';
     
@@ -82,15 +103,15 @@ And the code in the root component would look like this:
     
     function App() {
     
-    const title = "Welcome to the new blog";
-    return (
-    <div className="App">
-      <Navbar />
-      <div className="content">
-        <h1>{ title }</h1>
-      </div>
-    </div>
-    );
+        const title = "Welcome to the new blog";
+        return (
+            <div className="App">
+              <Navbar />
+              <div className="content">
+                <h1>{ title }</h1>
+              </div>
+            </div>
+        );
     }
     
     export default App;
