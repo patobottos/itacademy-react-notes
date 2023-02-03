@@ -4,11 +4,13 @@
 https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d<br/>
 by **The Net Ninja**<br/>
 
-React is an open source JavaScript view library, used for implementing user interfaces (UI). It was launched by Facebook in 2013.
+React is an open source JavaScript view library, used for implementing user interfaces (UI). It was originally created by Jordan Walke and launched by Facebook in 2013.
 
 How is JavaScript and HTML linked? With a syntax, called **JSX**. This returns HTML content, through a function written in JavaScript. To write JavaScript within JSX, you simply include the code within curly braces. However, because JSX is not valid JavaScript, JSX code must be compiled into JavaScript. **Babel** is the most popular transpiler.
 
-In nested JSX, **one parent element** must wrap all the other elements. Otherwise, elements with no parent will not transpile.
+In nested JSX, **one parent element** must wrap all the other elements. Otherwise, elements with no parent will not transpile. In order to use JSX we need to import React at the beginning of the file:
+
+    import React from "react"
 
 ### **VIRTUAL DOM**
 React uses a **Virtual DOM**, that is, an in-memory representation of the DOM. So, we can render JSX directly to the HTML DOM using React Rendering API known as ReactDOM. It offers a simple method to render React elements to the DOM which look like this:
@@ -23,7 +25,7 @@ The _targetNode_ is the DOM node that you want to render the component to.
 
 **Components** are JavaScript objects, and one of the most important elements of React. **components** can be **reused** and **combined**.
 
-They are the building blocks of any React application. A typical web in React might be made with several components, where components are self contained sections of contents. For example, a nav-bar, an article, a side-bar, in a website might be a component. Our mission i sto build these components and rendered them into the webpage, by React. 
+They are the building blocks of any React application. A typical web in React might be made with several components, where components are self contained sections of contents. For example, a nav-bar, an article, a side-bar, in a website might be a component. Our mission is to build these components and render them into the webpage, by React. 
 
 Components contain: 
 1) template 
@@ -95,7 +97,7 @@ And the code in the root component would look like this:
  
  We can add as many components as we like, and nest one component into another. 
  
-There are two ways to create a React Component. One of them, i sto use a JavaScript function. We call it: *Stateless Functional Component*, and we declare them with a capital letter:
+There are two ways to create a React Component. One of them, is to use a JavaScript function. We call it: *Stateless Functional Component*, and we declare them with a capital letter:
 
     const DemoComponent = function () {
         return (
