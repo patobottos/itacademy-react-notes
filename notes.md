@@ -354,5 +354,14 @@ Props are used to pass information from one component to another. It can be from
 
 ### **STYLED COMPONENTS**
 
+[TO BE COMPLETED]
 
-NEXXXXT
+### **ORGANIZING PROJECT STRUCTURE**
+
+1) Every component in a separate file. To avoid any confussion, we put a name starting with a capital letter, explaining the name of that component. For example: "Header.js"
+2) Piece of advice: install Vite, an extension that helps to render projects faster. (https://vitejs.dev/)
+3) Decompose the design into "pieces of content", i.e., possible separate custom components. This may be an example.
+
+![WEBPAGE STRUCTURE](https://user-images.githubusercontent.com/92860255/216955466-ea642415-5d17-41cc-bf69-431ddbcf8a8a.png)
+
+In this way, we can start thinking how many separate custom component files we need to create.
