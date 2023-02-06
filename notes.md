@@ -1,6 +1,5 @@
 # NOTES ON REACT<br/>
-**Source**: <br/>
-*Full Modern React Tutorial*<br/>
+**Source**: <br/> *Full Modern React Tutorial*<br/>
 https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d<br/>
 by **The Net Ninja**<br/>
 
@@ -357,6 +356,9 @@ Props are used to pass information from one component to another. It can be from
 [TO BE COMPLETED]
 
 ### **ORGANIZING PROJECT STRUCTURE**
+**Source**: <br/> *Learn React for free*<br/>
+https://scrimba.com/learn/learnreact/<br/>
+by **Bob Ziroll**<br/>
 
 1) Every component in a separate file. To avoid any confussion, we put a name starting with a capital letter, explaining the name of that component. For example: "Header.js"
 2) Piece of advice: install Vite, an extension that helps to render projects faster. (https://vitejs.dev/)
