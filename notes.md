@@ -348,8 +348,50 @@ There are times when we need to modify an element of the DOM in an imperative wa
 This hook triggers a code every time a certain state changes.
 
 ### **PROPS**
+**Source**: <br/> *Learn React for free*<br/>
+https://scrimba.com/learn/learnreact/<br/>
+by **Bob Ziroll**<br/>
 
-Props are used to pass information from one component to another. It can be from a parent component to a child, or from the child to the parent.
+Props are used to pass information from one component to another. It can be from a parent component to a child, or from the child to the parent. They are JavaScript objects.
+
+Just parameters being passed into a function, props being passed into a component help us make that component more reusable.
+
+But how do we pass a prop into a component? In this way:
+
+    <MyAwesomeFilmComponent 
+        prop1="filmTitle" 
+        prop2="year"
+        prop3="country"
+    />
+
+How do I receive props in a component? In this way:
+
+    function Navbar(props) {
+        console.log('film title', props.prop1)
+        return (
+            <header>
+                <h1>{props.prop1}</h1>
+                <h4>{props.prop2}, {props.prop3}</h4>    
+            </header>
+        )
+    }
+    
+The parameter we put inside our component will be an **object** (in our case, 'props'), that represents **all of the props** that your component received. 
+
+So, what we _could_ decide to do _or not_ is to **destructure** that object immediately as we receive it inside of my function:
+
+     function Navbar({prop1, prop2, prop3}) {
+            console.log('film title', prop1)
+            return (
+                <header>
+                    <h1>{prop1}</h1>
+                    <h4>{prop2}, {prop3}</h4>
+                </header>
+            )
+        }
+Both ways are valid ways to use props. Whichever way wwe use, we must try to be consistent with it.
+
+
 
 ### **STYLED COMPONENTS**
 
