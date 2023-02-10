@@ -321,11 +321,13 @@ We do not use (), beacuse this would fire the event, event without clickiing the
 e => is the event object, that we access when the event occurs. In this case, on clicking the button handleClickAgain we print by console the target of the event object.
 
 ## **STATE or data motch** and **HOOKS**
+
 When we talk about **state** we talk about data being used by that component at a point in time. That data could be an array of values, booleans, strings, objects, any kind our component uses.
 
 If a variable changes its value, and it is not reactive, we won't see the changes in our browser. To see the new values, we have to use a **hook**. You can identify a hook by its name because they usually start by the word _use_... 
 
-### **STATE VS PROPS**
+### **STATE VS PROPS**
+
 At this point, it is interesting to differenciate between Props and State.
 
 _"Props"_ refers to the properties being passsed into a component in order for it ro work correctly, similar to how a function receives parameters: from above. A component receiving props is not allowed to modify those props (i.e., they are _immutable_).
