@@ -104,7 +104,7 @@ You can decompose a whole page into smaller components. Let's see an example:
 
         ReactDOM.render(<Page />, document.getElementById("root"))
 
-The <Page /> component, is composed by three different and separate components: <Header />, <MainContent />, <Footer />. These components are reusable and easier to update.
+The <Page /> component, is composed by three different and separate components: _<Header />, <MainContent />, <Footer />_. These components are reusable and easier to update.
 
 Components contain: 
 1) template 
@@ -275,7 +275,6 @@ In sum, curly braces is an scape to whatever we want to code in JavaScript... in
 
 In web apps is common for us to find raw data in an array, or in an array of JavaScript objects, and we want to turn that data into visible values on the screen. To catch those values, it is common to use **.map()** JavaScript method. This method allow us to convert an array of raw data into an array of JSX elements that can be displayed on the page. It makes our code more "self-sustaining" - not requiring additional changes whenever the raw data changes.
 
- 
  
 ### **CLICK EVENTS**
 
