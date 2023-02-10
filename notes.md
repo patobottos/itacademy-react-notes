@@ -174,7 +174,7 @@ And the code in the root component would look like this:
     
     export default App;
  
- We can add as many components as we like, and nest one component into another. 
+We can add as many components as we like, and nest one component into another. 
  
 There are two ways to create a React Component. One of them, is to use a JavaScript function. We call it: *Stateless Functional Component*, and we declare them with a capital letter:
 
@@ -200,27 +200,82 @@ There are two ways to create a React Component. One of them, is to use a JavaScr
  
  This creates an ES6 class **kitten** which extends the React component. So, the kitten class has **access to many useful React features**.
  
- ### **ADDING STYLES**
- 
-We generally import a css file into the app file. But, we can also do some in-line style, a bit different than HTML syntaxis. Our inline styling is a **JavaScript object**, and cannot use hiphens. So, we camelCase each CSS property (for instance, we say "backgroundColor", and not background-color). Let's see an example:
+### **PROPS**
+**Source**: <br/> *Learn React for free*<br/>
+https://scrimba.com/learn/learnreact/<br/>
+by **Bob Ziroll**<br/>
 
-    const Navbar = () => {
-      return (
-        <nav className="navbar">
-          <h1>The Dojo Blog</h1>
-          <div className="links">
-            <a href="/">Home</a>
-            <a href="/create" style={{ 
-              color: 'white', 
-              backgroundColor: '#f1356d',
-              borderRadius: '8px' 
-            }}>New Blog</a>
-          </div>
-        </nav>
-      );
+Props are used to pass information from one component to another. It can be from a parent component to a child, or from the child to the parent. They are JavaScript objects.
+
+Just parameters being passed into a function, props being passed into a component help us make that component more reusable.
+
+But how do we pass a prop into a component? In this way:
+
+    <MyAwesomeFilmComponent 
+        prop1="filmTitle" 
+        prop2="year"
+        prop3="country"
+    />
+
+How do I receive props in a component? In this way:
+
+    function Navbar(props) {
+        console.log('film title', props.prop1)
+        return (
+            <header>
+                <h1>{props.prop1}</h1>
+                <h4>{props.prop2}, {props.prop3}</h4>    
+            </header>
+        )
     }
+    
+The parameter we put inside our component will be an **object** (in our case, 'props'), that represents **all of the props** that your component received. 
+
+So, what we _could_ decide to do _or not_ is to **destructure** that object immediately as we receive it inside of my function:
+
+     function Navbar({prop1, prop2, prop3}) {
+            console.log('film title', prop1)
+            return (
+                <header>
+                    <h1>{prop1}</h1>
+                    <h4>{prop2}, {prop3}</h4>
+                </header>
+            )
+        }
+Both ways are valid ways to use props. Whichever way wwe use, we must try to be consistent with it.
+
+If I'm working with booleans, or numbers, or arrays, we put it in curly braces. Let's see an example:
+
+    export default function App() {
+        return (
+            <div>
+                // HERE, THE JOKE COMPONENT TAKE PROPS AS STRINGS, LIKE SETUP AND PUNCHLINE, AS NUMBERS, AS UPVOTES AND DOWNVOTES, 
+                // AND AS BOOLEANS, ISPUN. ALSO, AN ARRAY OB OBJECTS IN COMMENTS.
+                <Joke 
+                    setup="How did the hacker escape the police?" 
+                    punchline="He just ransomware!"
+                    isPun={true}
+                    upVotes={6}
+                    downVotes={3}
+                    comments={[{author: "", body: "", title: ""}, {...}]}
+                />
+                <Joke 
+                    setup="Why don't pirates travel on mountain roads?" 
+                    punchline="Scurvy."
+                    isPun={false}
+                    upVotes={9}
+                    downVotes={1}
+                    comments={[{author: "", body: "", title: ""}, {...}]}
+                />
+            </div>
+        )
+    }
+
+In sum, curly braces is an scape to whatever we want to code in JavaScript... inside JSX.
+
+In web apps is common for us to find raw data in an array, or in an array of JavaScript objects, and we want to turn that data into visible values on the screen. To catch those values, it is common to use **.map()** JavaScript method. This method allow us to convert an array of raw data into an array of JSX elements that can be displayed on the page. It makes our code more "self-sustaining" - not requiring additional changes whenever the raw data changes.
+
  
-    export default Navbar;
  
 ### **CLICK EVENTS**
 
@@ -347,80 +402,28 @@ There are times when we need to modify an element of the DOM in an imperative wa
 
 This hook triggers a code every time a certain state changes.
 
-### **PROPS**
-**Source**: <br/> *Learn React for free*<br/>
-https://scrimba.com/learn/learnreact/<br/>
-by **Bob Ziroll**<br/>
 
-Props are used to pass information from one component to another. It can be from a parent component to a child, or from the child to the parent. They are JavaScript objects.
+### **ADDING STYLES**
+ 
+We generally import a css file into the app file. But, we can also do some in-line style, a bit different than HTML syntaxis. Our inline styling is a **JavaScript object**, and cannot use hiphens. So, we camelCase each CSS property (for instance, we say "backgroundColor", and not background-color). Let's see an example:
 
-Just parameters being passed into a function, props being passed into a component help us make that component more reusable.
-
-But how do we pass a prop into a component? In this way:
-
-    <MyAwesomeFilmComponent 
-        prop1="filmTitle" 
-        prop2="year"
-        prop3="country"
-    />
-
-How do I receive props in a component? In this way:
-
-    function Navbar(props) {
-        console.log('film title', props.prop1)
-        return (
-            <header>
-                <h1>{props.prop1}</h1>
-                <h4>{props.prop2}, {props.prop3}</h4>    
-            </header>
-        )
+    const Navbar = () => {
+      return (
+        <nav className="navbar">
+          <h1>The Dojo Blog</h1>
+          <div className="links">
+            <a href="/">Home</a>
+            <a href="/create" style={{ 
+              color: 'white', 
+              backgroundColor: '#f1356d',
+              borderRadius: '8px' 
+            }}>New Blog</a>
+          </div>
+        </nav>
+      );
     }
-    
-The parameter we put inside our component will be an **object** (in our case, 'props'), that represents **all of the props** that your component received. 
-
-So, what we _could_ decide to do _or not_ is to **destructure** that object immediately as we receive it inside of my function:
-
-     function Navbar({prop1, prop2, prop3}) {
-            console.log('film title', prop1)
-            return (
-                <header>
-                    <h1>{prop1}</h1>
-                    <h4>{prop2}, {prop3}</h4>
-                </header>
-            )
-        }
-Both ways are valid ways to use props. Whichever way wwe use, we must try to be consistent with it.
-
-If I'm working with booleans, or numbers, or arrays, we put it in curly braces. Let's see an example:
-
-    export default function App() {
-        return (
-            <div>
-                // HERE, THE JOKE COMPONENT TAKE PROPS AS STRINGS, LIKE SETUP AND PUNCHLINE, AS NUMBERS, AS UPVOTES AND DOWNVOTES, 
-                // AND AS BOOLEANS, ISPUN. ALSO, AN ARRAY OB OBJECTS IN COMMENTS.
-                <Joke 
-                    setup="How did the hacker escape the police?" 
-                    punchline="He just ransomware!"
-                    isPun={true}
-                    upVotes={6}
-                    downVotes={3}
-                    comments={[{author: "", body: "", title: ""}, {...}]}
-                />
-                <Joke 
-                    setup="Why don't pirates travel on mountain roads?" 
-                    punchline="Scurvy."
-                    isPun={false}
-                    upVotes={9}
-                    downVotes={1}
-                    comments={[{author: "", body: "", title: ""}, {...}]}
-                />
-            </div>
-        )
-    }
-
-In sum, curly braces is an scape to whatever we want to code in JavaScript... inside JSX.
-
-In web apps is common for us to find raw data in an array, or in an array of JavaScript objects, and we want to turn that data into visible values on the screen. To catch those values, it is common to use **.map()** JavaScript method. This method allow us to convert an array of raw data into an array of JSX elements that can be displayed on the page. It makes our code more "self-sustaining" - not requiring additional changes whenever the raw data changes.
+ 
+    export default Navbar;
 
 ### **STYLED COMPONENTS**
 
