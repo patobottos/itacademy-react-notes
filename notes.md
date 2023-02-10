@@ -391,7 +391,36 @@ So, what we _could_ decide to do _or not_ is to **destructure** that object imme
         }
 Both ways are valid ways to use props. Whichever way wwe use, we must try to be consistent with it.
 
+If I'm working with booleans, or numbers, or arrays, we put it in curly braces. Let's see an example:
 
+    export default function App() {
+        return (
+            <div>
+                // HERE, THE JOKE COMPONENT TAKE PROPS AS STRINGS, LIKE SETUP AND PUNCHLINE, AS NUMBERS, AS UPVOTES AND DOWNVOTES, 
+                // AND AS BOOLEANS, ISPUN. ALSO, AN ARRAY OB OBJECTS IN COMMENTS.
+                <Joke 
+                    setup="How did the hacker escape the police?" 
+                    punchline="He just ransomware!"
+                    isPun={true}
+                    upVotes={6}
+                    downVotes={3}
+                    comments={[{author: "", body: "", title: ""}, {...}]}
+                />
+                <Joke 
+                    setup="Why don't pirates travel on mountain roads?" 
+                    punchline="Scurvy."
+                    isPun={false}
+                    upVotes={9}
+                    downVotes={1}
+                    comments={[{author: "", body: "", title: ""}, {...}]}
+                />
+            </div>
+        )
+    }
+
+In sum, curly braces is an scape to whatever we want to code in JavaScript... inside JSX.
+
+In web apps is common for us to find raw data in an array, or in an array of JavaScript objects, and we want to turn that data into visible values on the screen. To catch those values, it is common to use **.map()** JavaScript method. This method allow us to convert an array of raw data into an array of JSX elements that can be displayed on the page. It makes our code more "self-sustaining" - not requiring additional changes whenever the raw data changes.
 
 ### **STYLED COMPONENTS**
 
