@@ -411,6 +411,14 @@ There are times when we need to modify an element of the DOM in an imperative wa
 
 This hook triggers a code every time a certain state changes.
 
+    useEffect(() => {
+        first
+
+        return () => {
+          second
+        }
+      }, [third])
+
 
 ### **ADDING STYLES**
  
