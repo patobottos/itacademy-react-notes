@@ -105,7 +105,7 @@ You can decompose a whole page into smaller components. Let's see an example:
         ReactDOM.render(<Page />, document.getElementById("root"))
 
 The <Page /> component, is composed by three different and separate components: 
-_<Header />, <MainContent />, <Footer />_. 
+*<Header />, <MainContent />, <Footer />*. 
 These components are reusable and easier to update.
 
 Components contain: 
@@ -410,8 +410,12 @@ There are times when we need to modify an element of the DOM in an imperative wa
     export default App;
    
 ### **useEffect**
+**Source**: <br/> *The road to React*<br/>
+https://www.roadtoreact.com/<br/>
+by **Robin Wieruch**<br/>
 
-This hook triggers a code every time a certain state changes.
+
+The primary effect of React is to display HTML in the DOM. With **useEffect** we're looking for a side effect: we want React to do more than just display HTML. useEffect is a hook that triggers a code every time a certain state changes. This is how it looks:
 
     useEffect(() => {
         first
@@ -421,6 +425,10 @@ This hook triggers a code every time a certain state changes.
         }
       }, [third])
 
+
+React’s useEffect Hook takes two arguments: the first argument is a function where the side-effect occurs. In our case, the side-effect is when the user types the searchTerm into the browser’s local storage. The optional second argument is a dependency array of variables. If one of theses variables changes, the function for the side-effect is called. In our case, the function is called every time the searchTerm changes; and it’s also called initially when the component renders for the first time.
+
+Leaving out the second argument, to be specific the dependency array, would make the function for the side-effect run on every render (initial render and update renders) of the component. If the dependency array of React’s useEffect is an empty array, the function for the side-effect is only called once, after the component renders for the first time. The hook lets us opt into React’s component lifecycle. It can be triggered when the component is first mounted, but also one of its dependencies are updated.
 
 ### **ADDING STYLES**
  
