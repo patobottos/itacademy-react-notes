@@ -415,7 +415,7 @@ https://www.roadtoreact.com/<br/>
 by **Robin Wieruch**<br/>
 
 
-The primary effect of React is to display HTML in the DOM. With **useEffect** we're looking for a side effect: we want React to do more than just display HTML. useEffect is a hook that triggers a code every time a certain state changes. This is how it looks:
+The primary effect of React is to display HTML in the DOM. With **useEffect** we're looking for a side-effect: we want React to do more than just display HTML. useEffect is a hook that triggers a code every time a certain state changes. This is how it looks:
 
     useEffect(() => {
         first
