@@ -104,7 +104,9 @@ You can decompose a whole page into smaller components. Let's see an example:
 
         ReactDOM.render(<Page />, document.getElementById("root"))
 
-The <Page /> component, is composed by three different and separate components: _<Header />, <MainContent />, <Footer />_. These components are reusable and easier to update.
+The <Page /> component, is composed by three different and separate components: 
+_<Header />, <MainContent />, <Footer />_. 
+These components are reusable and easier to update.
 
 Components contain: 
 1) template 
