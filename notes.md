@@ -105,7 +105,7 @@ You can decompose a whole page into smaller components. Let's see an example:
         ReactDOM.render(<Page />, document.getElementById("root"))
 
 The <Page /> component, is composed by three different and separate components: 
-*<Header />, <MainContent />, <Footer />*. 
+_<Header />, <MainContent />, <Footer />_. 
 These components are reusable and easier to update.
 
 Components contain: 
@@ -244,7 +244,7 @@ So, what we _could_ decide to do _or not_ is to **destructure** that object imme
                 </header>
             )
         }
-Both ways are valid ways to use props. Whichever way wwe use, we must try to be consistent with it.
+Both ways are valid ways to use props. Whichever way we use, we must try to be consistent with it.
 
 If I'm working with booleans, or numbers, or arrays, we put it in curly braces. Let's see an example:
 
