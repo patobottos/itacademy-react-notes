@@ -333,7 +333,7 @@ If a variable changes its value, and it is not reactive, we won't see the change
 
 At this point, it is interesting to differenciate between Props and State.
 
-_"Props"_ refers to the properties being passsed into a component in order for it ro work correctly, similar to how a function receives parameters: from above. A component receiving props is not allowed to modify those props (i.e., they are _immutable_).
+_"Props"_ refers to the properties being passsed into a component in order for it to work correctly, similar to how a function receives parameters: from above. A component receiving props is not allowed to modify those props (i.e., they are _immutable_).
 
 _"State"_, on the other hand, refers to values thar are _managed by the component_, similar to variables declared _inside_ a function. Any time you have changing values that should be saved/displayed, you will likely be using **state**. States are _mutable_.
 
