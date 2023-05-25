@@ -382,6 +382,39 @@ So, when this value changes, is going to change in the template as well.
    
 **setName** here is triggering React, and it re-renders the component, and when it re-renders, we have the new value of _name_ in the component. So we will use the **useState** hook when we need to use a value that changes.
 
+### **A counter example**
+**Source**: <br/> *Learn React for free*<br/>
+https://scrimba.com/learn/learnreact/<br/>
+by **Bob Ziroll**<br/>
+
+Let's take the example of a counter. We have a page with two buttons, a - and a +, and when we click, we go up or down by 1. Let's see the code:
+
+    import {useState} from "react";
+    
+    function App() {
+      const [count, setCount] = useState(0);
+
+      const adjustCount = (amount) => {
+        setCount((prevCount) => {
+        return (
+            prevCount + amount
+        )
+        }
+      };
+
+      return (
+        <div>
+          <p>This is the counter value: {count}</p>
+          <br />
+          <button onClick={() => adjustCount(-1}>-</button> <button onClick={() => adjustCount(1}>+</button>
+       </div>
+      );
+    }
+
+    export default App;
+
+If you ever need the old value of state to help you determine the new value of state, you should pass a callback function to your state setter function instead of using state directly. This callback function will receive the old value of state as its parameter, which you can then use to determine your new value of state.
+
 ### **useRef** 
 There are times when we need to modify an element of the DOM in an imperative way, for example when we want to perform an animation, play a multimedia file or force a "focus" on a field. This is where having the direct reference to the DOM element using **useRef** comes in handy.
 
